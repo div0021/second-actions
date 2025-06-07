@@ -14,7 +14,8 @@ jobs:
               run: npm ci
             - name: Run tests
               run: npm test
-    deploy:                   # this job will run in parallel with the test job
+    deploy:                   # this job will run in parallel with the test job (this is by default behavior but can be changed using needs)
+      needs: test          # this job will run only after the test job has completed successfully
       runs-on: ubuntu-latest
       steps:
         - name: Get code
