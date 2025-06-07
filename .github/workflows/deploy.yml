@@ -1,5 +1,5 @@
 name: Deploy Project
-on: push
+on: [push,workflow_dispatch]          # If we want trigger multiple events, we can use 'on: [push, pull_request]'
 jobs:
     test:
         runs-on: ubuntu-latest
